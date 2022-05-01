@@ -1,0 +1,6 @@
+<div>
+    <p><%= @user.name %></p>
+    <%= image_tag @user.get_profile_image(100,100) %>
+</div>
+
+<%= render 'books/list', book: @book %>
