@@ -4,7 +4,7 @@ const environment = require('./environment')
 
 module.exports = environment.toWebpackConfig()
 
-
+B
 const webpack = require('webpack')
 environment.plugins.prepend(
   'Provide',
@@ -14,3 +14,4 @@ environment.plugins.prepend(
     Popper: 'popper.js'
   })
   )
+  

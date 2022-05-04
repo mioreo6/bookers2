@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
 
   def index
-   @user_id = current_user.id
-
+   @user = User.all
+   @user.name = Book.user.name
   end
 
   private
