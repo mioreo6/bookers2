@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def index
    @user = User.all
-   @user.name = Book.user.name
+
   end
 
   private
