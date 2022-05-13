@@ -9,8 +9,12 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    @book.update(book_params)
-    redirect_to book_path(@book)
+    if @book.update(book_params)
+      redirect_to book_path(@book)
+    else
+      @book = Book.find(params[:id])
+      render :edit
+    end
   end
 
   def create
@@ -19,7 +23,10 @@ class BooksController < ApplicationController
     if @book.save
     redirect_to books_path
     else
-      render 
+       @user = current_user
+       @books = Book.all
+       @book = Book.new
+      render :index
     end
   end
 
@@ -34,7 +41,7 @@ class BooksController < ApplicationController
     @user = current_user
     @book = Book.new
     @books = Book.find(params[:id])
-    @users = User.find(params[:id])
+    @users = current_user
 
   end
 
