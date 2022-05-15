@@ -1,5 +1,17 @@
 <h2>User info</h2>
-
+<%= image_tag bok.get_profile_image(100,100) %>
+<table class="table">
+  <tbody>
+  <tr>
+    <th>name</th>
+    <th><%= bok.name %></th>
+  </tr>
+  <tr>
+    <th>introduction</th>
+    <th><%= bok.introduction %></th>
+  </tr>
+  </tbody>
+</table>
 
 <!--ユーザー設定-->
 <div class="row mb-2">

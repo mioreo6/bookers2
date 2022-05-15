@@ -1,10 +1,12 @@
 <div class="container px-5 px-sm-0">
 <div class="row mx-auto">
 <div>
- <%= render 'users/user', user: @user %>
+<div>
+ <%= render 'users/user', user: @user, bok: @bok %>
 </div>
 <div>
 <%= render 'books/list', book: @book %>
+</div>
 </div>
 <div class="col-md-8 offset-md-1">
 <h2>Books</h2>
@@ -12,7 +14,7 @@
    <tbody>
         <tr>
         <td><%= image_tag @books.user.get_profile_image(100,100) %></br>
-        <%= @books.user.name %>
+        <%= link_to @books.user.name, user_path(@users.id) %>
         </td>
         <td><%= link_to @books.title, book_path(@books.id) %></td>
         <td><%= @books.body %></td>
