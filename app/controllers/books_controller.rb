@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: [:top]
   before_action :correct_user, only:[:edit]
   def new
     @book = Book.new
@@ -35,6 +36,8 @@ class BooksController < ApplicationController
     @book = Book.new
     @user = current_user
     @books = Book.all
+
+
   end
 
   def show

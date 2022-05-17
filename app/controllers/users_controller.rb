@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:top]
   before_action :correct_user, only:[:edit]
 
   def show
@@ -6,6 +7,7 @@ class UsersController < ApplicationController
     @book = Book.new
     @bok = User.find(params[:id])
     @books = @bok.books
+
 
   end
 
